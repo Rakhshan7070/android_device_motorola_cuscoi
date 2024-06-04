@@ -1,5 +1,5 @@
 # Android device tree for motorola motorola edge 50 fusion (msi)
-**STILL UNDER DEVELOPMENT**
+STILL UNDER DEVELOPMENT
 ,,,
 # Copyright (C) 2024 The LineageOS Project
 #

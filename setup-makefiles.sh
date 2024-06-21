@@ -32,5 +32,7 @@ write_headers
 
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
+
+### Complete###
 # Finish
 write_footers

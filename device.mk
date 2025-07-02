@@ -34,7 +34,9 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.moto_sm7435_fod
+    android.hardware.biometrics.fingerprint@2.3-service.moto_sm7435_fod \
+    libshim_fp
+
 
 # Init
 PRODUCT_PACKAGES += \

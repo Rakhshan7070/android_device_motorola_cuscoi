@@ -20,6 +20,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'device/motorola/cuscoi',
     'device/motorola/sm7435-common',
     'vendor/motorola/sm7435-common',
     'hardware/motorola',
@@ -39,6 +40,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    'vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.1.so': blob_fixup()
+        .add_needed('libshim_fp.so'),
 }
 
 extract_fns: extract_fns_user_type = {

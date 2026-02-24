@@ -22,9 +22,13 @@ include device/motorola/sm7435-common/BoardConfigCommon.mk
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := cuscoi
 
+# Kernel
+TARGET_KERNEL_CONFIG += \
+	vendor/ext_config/moto-parrot-cuscoi.config
+
 # Manifest
 ODM_MANIFEST_SKUS += b d
-ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/sku/manifest_b.xml $(COMMON_PATH)/configs/vintf/manifest_parrot_ss.xml
+ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/sku/manifest_b.xml $(COMMON_PATH)/vintf/manifest_ss.xml
 ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/sku/manifest_d.xml
 
 # Partitions
@@ -33,9 +37,11 @@ BOARD_SUPER_PARTITION_SIZE := 8317304832
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
 
 # Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security

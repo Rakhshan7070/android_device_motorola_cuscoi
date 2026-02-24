@@ -48,7 +48,6 @@ vendor/lib64/libBSTMultiExpoGainHDR.so
 vendor/lib64/libBSTNodeUtils.so
 vendor/lib64/libBSTSWAD.so
 vendor/lib64/libBSTbase_share.so
-vendor/lib64/libDxHdcp.so
 vendor/lib64/libPlatformValidatorShared.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libSnpeHtpPrepare.so

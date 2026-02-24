@@ -33,15 +33,17 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 # Init
-$(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/$(notdir $f)))
-$(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/*.rc),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $f)))
-$(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
-        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    fstab.qcom.vendor_ramdisk \
+    init.mmi.overlay.rc \
+    init.vendor.st21nfc.rc
 
 # NFC
-TARGET_USES_ST_NFC := true
+PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.st \
+    com.android.nfc_extras \
+    Tag
 
 # Overlay
 PRODUCT_PACKAGES += \
@@ -60,9 +62,6 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
-
-# Wi-Fi
-TARGET_WIFI_VARIANTS := adrastea
 
 # Inherit from motorola sm7435-common
 $(call inherit-product, device/motorola/sm7435-common/common.mk)

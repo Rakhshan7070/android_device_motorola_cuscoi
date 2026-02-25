@@ -32,6 +32,10 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3-service.moto_sm7435_fod
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
